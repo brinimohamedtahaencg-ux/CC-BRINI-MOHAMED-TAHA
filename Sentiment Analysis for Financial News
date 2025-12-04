@@ -1,1 +1,52 @@
-Dans ce projet, nous avons réalisé une analyse de sentiment appliquée aux actualités financières afin de prédire automatiquement si une news exprime un sentiment positif, neutre ou négatif. Le dataset utilisé provient de Kaggle et contient des titres et descriptions d’articles financiers labellisés selon leur tonalité. Après un nettoyage du texte (mise en minuscules, suppression des caractères inutiles) et une vectorisation TF-IDF, plusieurs modèles de classification ont été testés, notamment Logistic Regression, Multinomial Naive Bayes et Random Forest. Les données ont été divisées en un ensemble d’entraînement et un ensemble de test afin de valider la performance réelle des modèles. Les résultats montrent que le pipeline TF-IDF combiné avec la Logistic Regression est le plus performant, offrant le meilleur équilibre entre précision, rappel et F1-score, ainsi qu’une matrice de confusion bien structurée. Naive Bayes donne de bons résultats en raison de la nature textuelle des données mais reste moins précis, alors que Random Forest montre des performances plus faibles sur des vecteurs TF-IDF très sparsifiés. L’étude démontre qu’un modèle NLP classique peut efficacement capter le sentiment des news financières et être utilisé comme indicateur complémentaire pour comprendre l’humeur du marché. Des améliorations pourraient inclure l’usage de modèles avancés comme BERT ou FinBERT, l’intégration de données en temps réel, ou encore le lien entre sentiment et volatilité boursière
+Introduction
+
+ntroduction
+
+Dans un contexte économique de plus en plus complexe et rapide, les investisseurs et analystes financiers doivent traiter une grande quantité d’informations pour prendre des décisions éclairées. Les nouvelles 
+financières — articles, communiqués, blogs spécialisés — peuvent influencer fortement les marchés boursiers. L’analyse de sentiment 
+Développement
+1. Collecte et préparation des données
+
+La première étape consiste à collecter des nouvelles financières à partir de sources fiables telles que les agences de presse, les sites spécialisés et les flux RSS. Les textes bruts sont ensuite
+prétraités pour améliorer la qualité de l’analyse :
+
+Nettoyage : suppression des caractères spéciaux, ponctuation et stop words.
+
+Tokenization : découpage du texte en unités significatives.
+
+Lemmatization : réduction des mots à leur racine pour homogénéiser le vocabulaire.
+
+2. Méthodes d’analyse de sentiment
+
+Plusieurs approches permettent d’évaluer le sentiment d’un texte financier :
+
+Lexicale : utilisation de dictionnaires financiers (comme Loughran-McDonald) pour attribuer des scores positifs, négatifs ou neutres aux mots.
+
+Machine Learning : modèles supervisés (SVM, Random Forest) entraînés sur des textes annotés, capables de prédire le sentiment global.
+
+Deep Learning / NLP avancé : modèles comme FinBERT, adaptés au contexte financier, capables de comprendre la nuance et l’ambiguïté des textes.
+
+3. Évaluation et résultats
+
+La performance des modèles est mesurée à l’aide de métriques classiques : précision, rappel et F1-score.
+
+Les nouvelles positives (ex. : croissance des bénéfices) tendent à faire augmenter les actions.
+
+Les nouvelles négatives (ex. : pertes, crises) entraînent souvent une baisse des prix.
+
+Les nouvelles neutres n’ont pas d’impact direct mais influencent parfois la volatilité lorsque combinées à d’autres événements.
+Les modèles basés sur FinBERT surpassent généralement les méthodes lexicale et ML classiques grâce à leur compréhension contextuelle plus fine.
+
+4. Limites et considérations
+
+Certaines nouvelles contiennent à la fois des informations positives et négatives, ce qui rend l’analyse difficile.
+
+La qualité des données et le biais des sources peuvent affecter la fiabilité des résultats.
+
+Le timing des publications joue un rôle crucial dans l’impact sur le marché.
+
+Conclusion
+
+L’analyse de sentiment des nouvelles financières constitue un outil stratégique pour anticiper les mouvements du marché et soutenir les décisions d’investissement. Les techniques basées sur le NLP,
+notamment les modèles spécialisés comme FinBERT, offrent une meilleure compréhension du contexte complexe des textes financiers, permettant aux analystes de détecter des signaux précoces et d’améliorer 
+la gestion du risque. Cependant, les limites liées aux données et à la temporalité doivent être prises en compte pour une interprétation fiable des résultats.
