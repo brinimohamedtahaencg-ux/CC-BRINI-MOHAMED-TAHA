@@ -1,1 +1,48 @@
+# 📊 Analyse de Clustering : K-Means, DBSCAN et Affinity Propagation
+
+## ⭐ Introduction
+L’objectif de ce projet est de segmenter un ensemble de clients en utilisant trois méthodes de clustering non supervisé : **K-Means**, **DBSCAN** et **Affinity Propagation**.  
+Le clustering permet de regrouper des individus présentant des caractéristiques similaires sans utiliser de classes prédéfinies.  
+Cette analyse vise à comprendre la structure des données, identifier des groupes homogènes et comparer les performances de chaque méthode.
+
+---
+
+## ⭐ Développement
+
+### 🔹 1. Préparation des données
+Les données ont été nettoyées, normalisées et réduites en dimensions pour faciliter l’analyse.  
+Ces étapes permettent d’améliorer la qualité des résultats, notamment pour K-Means et Affinity Propagation.
+
+### 🔹 2. Méthode K-Means
+- Repose sur la création d’un nombre *k* de clusters.
+- Le nombre optimal de clusters est déterminé grâce à la méthode du coude.
+- Produit des groupes bien séparés et facilement interprétables.
+
+### 🔹 3. Méthode DBSCAN
+- Basée sur la densité des points.
+- Ne demande pas de définir le nombre de clusters.
+- Très efficace pour détecter les **outliers** et les formes de clusters irrégulières.
+
+### 🔹 4. Méthode Affinity Propagation
+- Détermine automatiquement le nombre de clusters.
+- Identifie des "exemplaires" qui représentent chaque groupe.
+- Peut produire un nombre plus élevé de clusters selon la structure interne des données.
+
+### 🔹 5. Comparaison des méthodes
+Une comparaison a été réalisée à partir :
+- du nombre de clusters générés,
+- de la taille de chaque groupe,
+- de la capacité de chaque méthode à capturer la structure réelle des données (clusters réguliers, irréguliers, anomalies).
+
+---
+
+## ⭐ Conclusion
+Les trois méthodes de clustering offrent des résultats complémentaires :
+
+- **K-Means** : segmentation nette, adaptée lorsque le nombre de clusters est connu.
+- **DBSCAN** : excellent pour détecter les anomalies et les clusters complexes.
+- **Affinity Propagation** : flexible, capable de déterminer automatiquement le nombre optimal de groupes.
+
+L’utilisation de ces trois approches permet d’obtenir une vision complète et précise de la segmentation client.  
+Cette analyse constitue une base solide pour des applications marketing, CRM ou d’aide à la décision.
 
